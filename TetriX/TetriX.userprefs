@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MoveRacket.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Group.cs">
     <Files>
-      <File FileName="Assets\MoveRacket.cs" Line="9" Column="34" />
+      <File FileName="Assets\Group.cs" Line="76" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

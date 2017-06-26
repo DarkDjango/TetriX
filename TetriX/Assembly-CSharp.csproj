@@ -46,7 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MoveRacket.cs" />
+     <Compile Include="Assets\Grid.cs" />
+     <Compile Include="Assets\Group.cs" />
+     <Compile Include="Assets\SpawnBlock.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
