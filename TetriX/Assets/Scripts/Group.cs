@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Group : MonoBehaviour {
 	float lastFall = 0;
+	public AudioClip line; 
 	bool isValidGridPos() {        
 		foreach (Transform child in transform) {
 			Vector2 v = Grid.roundVec2(child.position);
@@ -35,7 +36,7 @@ public class Group : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start() {
-		// Default position not valid? Then it's game over
+
 		if (!isValidGridPos()) {
 			Debug.Log("GAME OVER");
 			Destroy(gameObject);
@@ -71,13 +72,12 @@ public class Group : MonoBehaviour {
 				transform.position += new Vector3(-1, 0, 0);
 		}
 		// Rotate
-		else if (Input.GetKeyDown(KeyCode.Space)) {
+		else if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.UpArrow)) {
 			transform.Rotate (0, 0, 90);
 
-			if (isValidGridPos())
-				updateGrid();
-			else
-				transform.Rotate(0, 0, 90);
+			if (isValidGridPos ()) {
+				updateGrid ();
+			}
 		}
 		// Move Downwards and Fall
 		else if (Input.GetKeyDown(KeyCode.DownArrow) ||

@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnBlock : MonoBehaviour {
+
 	public GameObject[] groups;
-	// Use this for initialization
+	public GameObject[] groups2;
+	public Material[] materials;
+	public Color[] colors;
+
 	public void spawnNext() {
-		// Random Index
+
 		int i = Random.Range(0, groups.Length);
 
-		// Spawn Group at current Position
-		print (transform.position);
-		Instantiate(groups[i],transform.position,Quaternion.identity);
+		Instantiate(groups2[i],transform.position,Quaternion.identity);
 	}
 	void Start () {
+
+		for(int c=0;c<7;c++){
+			materials [c].color = colors [c];
+		}
+
 		spawnNext();
+
 	}
 	
 	// Update is called once per frame
