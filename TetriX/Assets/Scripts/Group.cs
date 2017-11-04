@@ -5,6 +5,7 @@ using UnityEngine;
 public class Group : MonoBehaviour {
 	float lastFall = 0;
 	public AudioClip line; 
+	private Controller m_Controller;
 	bool isValidGridPos() {        
 		foreach (Transform child in transform) {
 			Vector2 v = Grid.roundVec2(child.position);
@@ -41,15 +42,16 @@ public class Group : MonoBehaviour {
 			Debug.Log("GAME OVER");
 			Destroy(gameObject);
 		}
+		m_Controller = GameObject.Find ("Controller").GetComponent<Controller> ();
 	}
 	
 	// Update is called once per frame
 	void Update() {
 		// Move Left
-		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+		if (Input.GetKeyDown (KeyCode.LeftArrow) || m_Controller.Left) {
 			// Modify position
 			transform.position += new Vector3 (-1, 0, 0);
-
+			m_Controller.Left = false;
 			// See if valid
 			if (isValidGridPos ())
 				// Its valid. Update grid.
@@ -59,10 +61,10 @@ public class Group : MonoBehaviour {
 				transform.position += new Vector3 (1, 0, 0);
 		}
 		// Move Right
-		else if (Input.GetKeyDown (KeyCode.RightArrow)) {
+		else if (Input.GetKeyDown (KeyCode.RightArrow) || m_Controller.Right) {
 			// Modify position
 			transform.position += new Vector3 (1, 0, 0);
-
+			m_Controller.Right = false;
 			// See if valid
 			if (isValidGridPos ()) {
 				// It's valid. Update grid.
@@ -72,19 +74,19 @@ public class Group : MonoBehaviour {
 				transform.position += new Vector3(-1, 0, 0);
 		}
 		// Rotate
-		else if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.UpArrow)) {
+		else if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.UpArrow)|| m_Controller.Up) {
 			transform.Rotate (0, 0, 90);
-
+			m_Controller.Up = false;
 			if (isValidGridPos ()) {
 				updateGrid ();
 			}
 		}
 		// Move Downwards and Fall
-		else if (Input.GetKeyDown(KeyCode.DownArrow) ||
+		else if (Input.GetKeyDown(KeyCode.DownArrow) || m_Controller.Down ||
 			Time.time - lastFall >= 1) {
 			// Modify position
 			transform.position += new Vector3(0, -1, 0);
-
+			m_Controller.Down = false;
 			// See if valid
 			if (isValidGridPos()) {
 				// It's valid. Update grid.
