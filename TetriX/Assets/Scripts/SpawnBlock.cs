@@ -12,8 +12,8 @@ public class SpawnBlock : MonoBehaviour {
 	public void spawnNext() {
 
 		int i = Random.Range(0, groups.Length);
-
 		Instantiate(groups2[i],transform.position,Quaternion.identity);
+
 	}
 	void Start () {
 
