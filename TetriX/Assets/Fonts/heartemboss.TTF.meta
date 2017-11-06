@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6505142ef9c78cf47ad4489f1af3e87b
+timeCreated: 1509915379
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: heart emboss
+  fontNames:
+  - heart emboss
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

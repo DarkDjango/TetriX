@@ -11,6 +11,13 @@ public class Grid : MonoBehaviour {
 		return new Vector2(Mathf.Round(v.x),
 			Mathf.Round(v.y));
 	}
+
+	public static int abs(int i) {
+		if (i < 0)
+			return -i;
+		else
+			return i;
+	}
 	public static bool insideBorder(Vector2 pos) {
 		return ((int)pos.x >= 0 &&
 			(int)pos.x < w &&
@@ -24,10 +31,27 @@ public class Grid : MonoBehaviour {
 	}
 	public static void deleteRow(int y) {
 		for (int x = 0; x < w; ++x) {
-			Destroy(grid[x, y].gameObject);
-			grid[x, y] = null;
+			if (grid [x, y] != null) {
+				if (grid [x, y].gameObject.name == "blocklightning") {
+					Destroy (grid [x, y].gameObject);
+					grid [x, y] = null;
+					LightningStrike (x, y);
+				} else {
+					Destroy (grid [x, y].gameObject);
+					grid [x, y] = null;
+				}
+			}
 		}
 	}
+	public static void LightningStrike(int x, int y) {
+		for (int a = y + 3; a >= y - 3; a--)
+			for (int b = x - (3 - abs(a - y)); b <= x + (3 - abs(a - y)); b++) {
+				if (((b > 0) && (b < w)) && (a > 0) && (a < h) && (grid [b, a] != null)) {
+					Destroy (grid [b, a].gameObject);
+					grid [b, a] = null;
+				}
+			}
+		}
 	public static void decreaseRow(int y) {
 		for (int x = 0; x < w; ++x) {
 			if (grid[x, y] != null) {

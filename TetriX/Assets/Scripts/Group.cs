@@ -21,6 +21,12 @@ public class Group : MonoBehaviour {
 		}
 		return true;
 	}
+	public int abs( int i) {
+		if (i < 0)
+			return -i;
+		else
+			return i;
+	}
 	void updateGrid() {
 		// Remove old children from grid
 		for (int y = 0; y < Grid.h; ++y)
@@ -37,7 +43,6 @@ public class Group : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start() {
-
 		if (!isValidGridPos()) {
 			Debug.Log("GAME OVER");
 			Destroy(gameObject);

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e6d6739630f439645a9d6c6939e8375e
+timeCreated: 1509915380
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kinkee
+  fontNames:
+  - Kinkee
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
