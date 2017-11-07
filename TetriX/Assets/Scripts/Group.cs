@@ -84,7 +84,9 @@ public class Group : MonoBehaviour {
 			m_Controller.Up = false;
 			if (isValidGridPos ()) {
 				updateGrid ();
-			}
+			} else
+				transform.Rotate (0, 0, -90);
+
 		}
 		// Move Downwards and Fall
 		else if (Input.GetKeyDown(KeyCode.DownArrow) || m_Controller.Down ||
