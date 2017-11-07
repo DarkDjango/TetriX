@@ -8,15 +8,15 @@ public class SpawnBlock : MonoBehaviour {
 	public GameObject[] groups2;
 	public Material[] materials;
 	public Color[] colors;
-
+	public int nextPiece;
 	public void spawnNext() {
 
-		int i = Random.Range(0, groups.Length);
-		Instantiate(groups2[i],transform.position,Quaternion.identity);
-
+		Instantiate(groups2[nextPiece],transform.position,Quaternion.identity);
+		nextPiece = Random.Range(0, groups.Length);
 	}
 	void Start () {
 
+		nextPiece = Random.Range(0, groups.Length);
 		for(int c=0;c<7;c++){
 			materials [c].color = colors [c];
 		}

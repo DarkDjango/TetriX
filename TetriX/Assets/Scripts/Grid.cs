@@ -6,6 +6,7 @@ public class Grid : MonoBehaviour {
 	public static int w = 10;
 	public static int h = 20;
 	public AudioClip soundLine;
+	private static Flash flsh;
 	public static Transform[,] grid = new Transform[w, h];
 	public static Vector2 roundVec2(Vector2 v) {
 		return new Vector2(Mathf.Round(v.x),
@@ -44,6 +45,8 @@ public class Grid : MonoBehaviour {
 		}
 	}
 	public static void LightningStrike(int x, int y) {
+		flsh =  GameObject.Find ("Flash").GetComponent<Flash> ();
+		flsh.FlashBang ();
 		for (int a = y + 3; a >= y - 3; a--)
 			for (int b = x - (3 - abs(a - y)); b <= x + (3 - abs(a - y)); b++) {
 				if (((b > 0) && (b < w)) && (a > 0) && (a < h) && (grid [b, a] != null)) {
