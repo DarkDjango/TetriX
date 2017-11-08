@@ -6,6 +6,7 @@ public class Group : MonoBehaviour {
 	float lastFall = 0;
 	public AudioClip line; 
 	private Controller m_Controller;
+	private ScoreText gameScoreDisplay;
 	bool isValidGridPos() {        
 		foreach (Transform child in transform) {
 			Vector2 v = Grid.roundVec2(child.position);
@@ -43,6 +44,9 @@ public class Group : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start() {
+
+		gameScoreDisplay = GameObject.Find ("Score").GetComponent<ScoreText> ();
+
 		if (!isValidGridPos()) {
 			Debug.Log("GAME OVER");
 			Destroy(gameObject);
@@ -97,6 +101,7 @@ public class Group : MonoBehaviour {
 			// See if valid
 			if (isValidGridPos()) {
 				// It's valid. Update grid.
+				gameScoreDisplay.score += 1;
 				updateGrid();
 			} else {
 				// It's not valid. revert.

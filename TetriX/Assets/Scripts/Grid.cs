@@ -7,6 +7,7 @@ public class Grid : MonoBehaviour {
 	public static int h = 20;
 	public AudioClip soundLine;
 	private static Flash flsh;
+	private static ScoreText gameScoreDisplay;
 	public static Transform[,] grid = new Transform[w, h];
 	public static Vector2 roundVec2(Vector2 v) {
 		return new Vector2(Mathf.Round(v.x),
@@ -31,6 +32,8 @@ public class Grid : MonoBehaviour {
 		return true;
 	}
 	public static void deleteRow(int y) {
+		gameScoreDisplay = GameObject.Find ("Score").GetComponent<ScoreText> ();
+		gameScoreDisplay.score = gameScoreDisplay.score + 1000;
 		for (int x = 0; x < w; ++x) {
 			if (grid [x, y] != null) {
 				if (grid [x, y].gameObject.name == "blocklightning") {
@@ -80,4 +83,5 @@ public class Grid : MonoBehaviour {
 			}
 		}
 	}
+
 }
