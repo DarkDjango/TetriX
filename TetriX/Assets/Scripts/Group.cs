@@ -129,7 +129,7 @@ public class Group : MonoBehaviour {
 		}
 		// Move Downwards and Fall
 		else if (Input.GetKeyDown(KeyCode.DownArrow) || m_Controller.Down ||
-			Time.time - lastFall >= 1/6) {
+			Time.time - lastFall >= 1/speedFactor) {
 			// Modify position
 			transform.position += new Vector3(0, -1, 0);
 			m_Controller.Down = false;
