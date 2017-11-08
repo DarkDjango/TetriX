@@ -9,6 +9,10 @@ public class MainMenu : MonoBehaviour {
 		SceneManager.LoadScene("TetriX");
 	}
 
+	public void ClassicStart() {
+		SceneManager.LoadScene("Classic");
+	}
+
 	public void OptionStart() {
 		SceneManager.LoadScene("Options");
 	}
