@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
-	
+
 	public void AdventureStart() {
 		SceneManager.LoadScene("TetriX");
 	}

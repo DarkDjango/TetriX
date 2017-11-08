@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Group : MonoBehaviour {
@@ -7,6 +8,9 @@ public class Group : MonoBehaviour {
 	public AudioClip line; 
 	private Controller m_Controller;
 	private ScoreText gameScoreDisplay;
+	public string sceneName;
+	public double speedFactor;
+
 	bool isValidGridPos() {        
 		foreach (Transform child in transform) {
 			Vector2 v = Grid.roundVec2(child.position);
@@ -46,6 +50,11 @@ public class Group : MonoBehaviour {
 	void Start() {
 
 		gameScoreDisplay = GameObject.Find ("Score").GetComponent<ScoreText> ();
+		
+		// Verify the current active scene, usage for speed factor manipulation
+ 		UnityEngine.SceneManagement.Scene currentScene = SceneManager.GetActiveScene ();
+        sceneName = currentScene.name;
+		speedFactor = 1;
 
 		if (!isValidGridPos()) {
 			Debug.Log("GAME OVER");
@@ -56,6 +65,32 @@ public class Group : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
+
+		// Speed factor update
+		// speedFactor = 1,25^level
+		// level = [0,8]
+		if(sceneName == "Classic"){
+			if(gameScoreDisplay.score>=10000){
+				speedFactor = 5.99;
+			}else if(gameScoreDisplay.score>=8750){
+				speedFactor = 4.77;
+			}else if(gameScoreDisplay.score>=7500){
+				speedFactor = 3.81;
+			}else if(gameScoreDisplay.score>=6250){
+				speedFactor = 3.05;
+			}else if(gameScoreDisplay.score>=5000){
+				speedFactor = 2.44;
+			}else if(gameScoreDisplay.score>=3750){
+				speedFactor = 1.95;
+			}else if(gameScoreDisplay.score>=2500){
+				speedFactor = 1.56;
+			}else if(gameScoreDisplay.score>=1250){
+				speedFactor = 1.25;
+			}
+
+		}
+
+
 		// Move Left
 		if (Input.GetKeyDown (KeyCode.LeftArrow) || m_Controller.Left) {
 			// Modify position
@@ -94,7 +129,7 @@ public class Group : MonoBehaviour {
 		}
 		// Move Downwards and Fall
 		else if (Input.GetKeyDown(KeyCode.DownArrow) || m_Controller.Down ||
-			Time.time - lastFall >= 1) {
+			Time.time - lastFall >= 1/6) {
 			// Modify position
 			transform.position += new Vector3(0, -1, 0);
 			m_Controller.Down = false;

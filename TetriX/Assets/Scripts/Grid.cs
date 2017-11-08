@@ -33,7 +33,7 @@ public class Grid : MonoBehaviour {
 	}
 	public static void deleteRow(int y) {
 		gameScoreDisplay = GameObject.Find ("Score").GetComponent<ScoreText> ();
-		gameScoreDisplay.score = gameScoreDisplay.score + 1000;
+		gameScoreDisplay.score = gameScoreDisplay.score + 100;
 		for (int x = 0; x < w; ++x) {
 			if (grid [x, y] != null) {
 				if (grid [x, y].gameObject.name == "blocklightning") {
