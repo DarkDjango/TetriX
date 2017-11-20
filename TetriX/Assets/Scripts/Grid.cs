@@ -41,7 +41,7 @@ public class Grid : MonoBehaviour {
 			if (grid [x, y] != null) {
 				if (grid [x, y].gameObject.name == "blocklightning")
 					specialblocks [x] = 1;
-				else if (grid [x, y].gameObject.name == "blockfrost")
+				else if (grid [x, y].gameObject.name == "blockaqua")
 					specialblocks [x] = 2;
 				Destroy (grid [x, y].gameObject);
 				grid [x, y] = null;
@@ -85,28 +85,40 @@ public class Grid : MonoBehaviour {
 					position = Random.Range (0, 9);
 					while (valid4x4 [position] != 1)
 						position = Random.Range (0, 9);
-					Instantiate(Resources.Load("Bubble"),grid[position,0].gameObject.transform.position, Quaternion.identity);
-					Destroy (grid [position, 0].gameObject);
-					grid [position, 0] = null;
-					Instantiate(Resources.Load("Bubble"),grid[position+1,0].gameObject.transform.position, Quaternion.identity);
-					Destroy (grid [position + 1, 0].gameObject);
-					grid[position + 1, 0] = null;
-					Instantiate(Resources.Load("Bubble"),grid[position,1].gameObject.transform.position, Quaternion.identity);
-					Destroy (grid [position, 1].gameObject);
-					grid [position, 1] = null;
-					Instantiate(Resources.Load("Bubble"),grid[position+1,1].gameObject.transform.position, Quaternion.identity);
-					Destroy (grid [position + 1, 1].gameObject);
-					grid [position + 1, 1] = null;
+					if (grid [position, 0] != null) {
+						Instantiate(Resources.Load("Bubble"),grid[position,0].gameObject.transform.position, Quaternion.identity);
+						Destroy (grid [position, 0].gameObject);
+						grid [position, 0] = null;
+					}
+					if (grid [position +1, 0] != null) {
+						Instantiate(Resources.Load("Bubble"),grid[position+1,0].gameObject.transform.position, Quaternion.identity);
+						Destroy (grid [position + 1, 0].gameObject);
+						grid [position + 1, 0] = null;
+					}
+					if (grid [position, 1] != null) {
+						Instantiate (Resources.Load ("Bubble"), grid [position, 1].gameObject.transform.position, Quaternion.identity);
+						Destroy (grid [position, 1].gameObject);
+						grid [position, 1] = null;
+					}
+					if (grid [position+1, 1] != null) {
+						Instantiate(Resources.Load("Bubble"),grid[position+1,1].gameObject.transform.position, Quaternion.identity);
+						Destroy (grid [position + 1, 1].gameObject);
+						grid [position + 1, 1] = null;
+					}
 				} else {
 					position = Random.Range (0, 9);
 					while (valid2x2 [position] != 1)
 						position = Random.Range (0, 9);
-					Instantiate(Resources.Load("Bubble"),grid[position,0].gameObject.transform.position, Quaternion.identity);
-					Destroy (grid [position, 0].gameObject);
-					grid [position, 0] = null;
-					Instantiate (Resources.Load ("Bubble"), grid [position + 1, 0].gameObject.transform.position, Quaternion.identity);
-					Destroy (grid [position + 1, 0].gameObject);
-					grid [position + 1, 0] = null;
+					if (grid [position, 0] != null) {
+						Instantiate (Resources.Load ("Bubble"), grid [position, 0].gameObject.transform.position, Quaternion.identity);
+						Destroy (grid [position, 0].gameObject);
+						grid [position, 0] = null;
+					}
+					if (grid [position +1, 0] != null) {
+						Instantiate (Resources.Load ("Bubble"), grid [position + 1, 0].gameObject.transform.position, Quaternion.identity);
+						Destroy (grid [position + 1, 0].gameObject);
+						grid [position + 1, 0] = null;
+					}
 				}
 			}
 		}

@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Bubbles.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\FadeAndDie.cs" />
+     <Compile Include="Assets\Scripts\FirstBoss.cs" />
      <Compile Include="Assets\Scripts\Flash.cs" />
      <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\Group.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\ScoreText.cs" />
      <Compile Include="Assets\Scripts\ShowNextPiece.cs" />
      <Compile Include="Assets\Scripts\SpawnBlock.cs" />
+     <Compile Include="Assets\Scripts\StageClearText.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

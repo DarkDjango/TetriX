@@ -7,6 +7,7 @@ public class Flash : MonoBehaviour {
 	Image sr;
 	Time time;
 	private bool BeingHandled = false;
+	public bool endStage = false;
 	// Use this for initialization
 	public void FlashBang () {
 		sr.color = new Color (1, 1, 1, 1);
@@ -14,8 +15,9 @@ public class Flash : MonoBehaviour {
 	private IEnumerator HandleIt ()
 	{
 		BeingHandled = true;
-		yield return new WaitForSeconds (0.05f);
-		sr.color -= new Color (0, 0, 0, 0.1f);
+		yield return new WaitForSeconds (0.1f);
+		if (!endStage)
+			sr.color -= new Color (0, 0, 0, 0.1f);
 		BeingHandled = false;
 	}
 
