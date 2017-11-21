@@ -1,0 +1,5 @@
+1) Modo versus
+1.1) Tempo finito
+Existirá uma IA que será a oponente e o objetivo do jogador será completar o maior número de linhas enquanto atrapalha o adversário em IA através do "consumo" de blocos especiais que se comportam conforme definido anteriormente. Para este modo o tempo será finito e a velocidade de queda das peças será inversalmente proporcional ao tempo restante, assim ganha quem tiver maior score ao fim do tempo, em caso de algum jogador ter game over, o outro será o vencedor.
+1.2) Tempo infinito
+Nesta opção o tempo é infinito e o objetivo do jogador é de fazer com que a IA sofra game over usando dos efeitos dos blocos especiais para atrapalhá-la. Diferente do anterior será uma opção com maior demanda de tempo e com incremento de velocidade menor.
