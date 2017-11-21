@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TetriX.unity
+- path: Assets/Classic.unity
   isLoaded: 1
   isActive: 1
