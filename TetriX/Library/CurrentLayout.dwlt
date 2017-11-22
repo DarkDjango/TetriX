@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 683, y: 492}
+  m_MinSize: {x: 583, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 47
+  controlID: 46
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1415
     height: 947
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 306, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 48
+  controlID: 47
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1415
     height: 532
-  m_MinSize: {x: 406, y: 221}
+  m_MinSize: {x: 306, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 49
+  controlID: 48
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,14 +201,14 @@ MonoBehaviour:
     y: 0
     width: 1061
     height: 532
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 104, y: 121}
+  m_MaxSize: {x: 4004, y: 4021}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -367,21 +367,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ca1cfdff441dfdff121efdff181efdff201efdff261efdff3225fdffac25fdff7a26fdff8026fdff8826fdff8e26fdff0043fdffcc43fdffdc44fdffb647fdff0e49fdff8849fdff564afdff5c4afdff604afdff664afdff2c52fdffa652fdff7453fdff7a53fdff7e53fdff8453fdff3859fdffb259fdff805afdff865afdff8a5afdff905afdff0c7efdffba7efdff887ffdff8e7ffdff927ffdff987ffdffb893fdff6694fdff3495fdff3a95fdff3e95fdff4495fdff8498fdff3299fdff009afdff069afdff0a9afdff109afdff4abefdfff8befdffc6bffdffccbffdffd0bffdffd6bffdff88b1feff24b2fefff2b2fefff8b2fefffcb2feff02b3feff0af2ffff98f3fffffef5ffffa6f6ffffa0f8ffff7cf9ffff4afaffff50faffff54faffff5afaffffe4fbffff00000000f82e0000e42f000082300000083500002e350000ac350000d2350000ec3b0000123c0000d2470000f8470000064c00002c4c00001e5200002e570000745c00001e5f00001464000094640000
+    m_ExpandedIDs: e4fbffff00000000202700004c270000a0270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: ControlPad
-      m_OriginalName: ControlPad
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -179456
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -417,14 +417,14 @@ MonoBehaviour:
     width: 1057
     height: 511
   m_SceneLighting: 1
-  lastFramingTime: 3416.0871333403225
+  lastFramingTime: 229.08058024987022
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 533.623, y: 192.61426, z: 0}
+    m_Target: {x: -1.4093275, y: -1.2543664, z: 0}
     speed: 2
-    m_Value: {x: 533.623, y: 192.61426, z: 0}
+    m_Value: {x: -1.4093275, y: -1.2543664, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -451,9 +451,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 736.6638
+    m_Target: 16.186234
     speed: 2
-    m_Value: 736.6638
+    m_Value: 16.186234
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -501,18 +501,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Prefabs
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 96
   m_LastFolders:
-  - Assets
-  m_LastFoldersGridSize: -1
+  - Assets/Prefabs
+  m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Pichau\Desktop\TetriX\TetriX
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: cc240000
-    m_LastClickedID: 9420
+    m_SelectedIDs: ba260000
+    m_LastClickedID: 9914
     m_ExpandedIDs: 00000000cc24000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -593,8 +593,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_ScrollPosition: {x: 0, y: 39}
+    m_GridSize: 96
   m_DirectoriesAreaWidth: 115
 --- !u!114 &16
 MonoBehaviour:
