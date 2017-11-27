@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Flash : MonoBehaviour {
 	Image sr;
-	Time time;
 	private bool BeingHandled = false;
 	public bool endStage = false;
 	// Use this for initialization

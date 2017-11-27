@@ -1,24 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Intro : MonoBehaviour {
-		RectTransform m_RectTransform;
-		float m_XAxis, m_YAxis;
 
-		void Start()
-		{
-			m_RectTransform = GameObject.Find("IntroText").GetComponent<RectTransform>();
-		}
-
-	IEnumerator Wait()
-	{
-		yield return new WaitForSeconds (5);
+	private TextFadeInFadeOut text1;
+	private TextFadeInFadeOut text2;
+	private TextFadeInFadeOut text3;
+	private TextFadeInFadeOut text4;
+	private FadeInFadeOut Flash;	
+	public float time0, currentTime, goToMenu;
+	public bool skipIntro;
+	void Start() {
+		text1 =  GameObject.Find ("Text1").GetComponent<TextFadeInFadeOut> ();
+		text2 =  GameObject.Find ("Text2").GetComponent<TextFadeInFadeOut> ();
+		text3 =  GameObject.Find ("Text3").GetComponent<TextFadeInFadeOut> ();
+		text4 =  GameObject.Find ("Text4").GetComponent<TextFadeInFadeOut> ();
+		Flash =  GameObject.Find ("Flash").GetComponent<FadeInFadeOut> ();
+		time0 = Time.time;
+		goToMenu = -1;
+		skipIntro = false;
 	}
-	void Update()
-	{
-		//	
-		Wait ();
-		m_RectTransform.pivot += new Vector2 (0, 1);
+	public void skipIntroButton() {
+		skipIntro = true;
+	}
+	void Update () {
+		currentTime = Time.time;
+		if ((currentTime > time0) && (currentTime < time0 + 4)) {
+			text1.fadeIn = true;	
+		} else if ((currentTime > time0 + 4) && (currentTime < time0 + 9)) {
+			text1.fadeIn = false;
+			text1.fadeOut = true;
+		} else if ((currentTime > time0 + 9) && (currentTime < time0 + 12)) {
+			text2.fadeIn = true;
+		} else if ((currentTime > time0 + 12) && (currentTime < time0 + 19)) {
+			text2.fadeIn = false;
+			text2.fadeOut = true;
+		} else if ((currentTime > time0 + 19) && (currentTime < time0 + 23)) {
+			text3.fadeIn = true;
+		} else if ((currentTime > time0 + 23) && (currentTime < time0 + 28)) {
+			text3.fadeIn = false;
+			text3.fadeOut = true;
+		} else if ((currentTime > time0 + 28))  {
+			text4.fadeIn = true;
+		} 
+		if (((currentTime >= time0 + 35) || (skipIntro))&& (goToMenu < 0))	 {
+			Flash.fadeIn = true;
+			goToMenu = Time.time;
+		}
+		if ((goToMenu > 0) && (currentTime > goToMenu + 4))
+			SceneManager.LoadScene ("MainMenu");
 	}
 }

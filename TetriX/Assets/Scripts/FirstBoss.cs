@@ -14,7 +14,7 @@ public class FirstBoss : MonoBehaviour {
 
 	void Start () {
 		flsh =  GameObject.Find ("Flash").GetComponent<Flash> ();
-		timer = 60;
+		timer = 180;
 	}
 	void Update () {
 		if (!BeingHandled) {
