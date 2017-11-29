@@ -10,7 +10,7 @@ public class Group : MonoBehaviour {
 	private ScoreText gameScoreDisplay;
 	public string sceneName;
 	public double speedFactor;
-
+	private SpawnBlock spawner;
 	bool isValidGridPos() {        
 		foreach (Transform child in transform) {
 			Vector2 v = Grid.roundVec2(child.position);
@@ -50,7 +50,7 @@ public class Group : MonoBehaviour {
 	void Start() {
 
 		gameScoreDisplay = GameObject.Find ("Score").GetComponent<ScoreText> ();
-		
+		spawner = GameObject.Find ("Spawner").GetComponent<SpawnBlock> ();
 		// Verify the current active scene, usage for speed factor manipulation
  		UnityEngine.SceneManagement.Scene currentScene = SceneManager.GetActiveScene ();
         sceneName = currentScene.name;
@@ -70,9 +70,9 @@ public class Group : MonoBehaviour {
 		// speedFactor = 1,25^level
 		// level = [0,8]
 		if(sceneName == "Classic"){
-			if(gameScoreDisplay.score>=10000){
+			if(gameScoreDisplay.score>=10000) {
 				speedFactor = 5.99;
-			}else if(gameScoreDisplay.score>=8750){
+			} else if(gameScoreDisplay.score>=8750){
 				speedFactor = 4.77;
 			}else if(gameScoreDisplay.score>=7500){
 				speedFactor = 3.81;
@@ -89,8 +89,8 @@ public class Group : MonoBehaviour {
 			}
 
 		}
-
-
+		if (spawner.MagneticPressure)
+			speedFactor = 4;
 		// Move Left
 		if (Input.GetKeyDown (KeyCode.LeftArrow) || m_Controller.Left) {
 			// Modify position
@@ -146,8 +146,7 @@ public class Group : MonoBehaviour {
 				Grid.deleteFullRows();
 
 				// Spawn next Group
-				FindObjectOfType<SpawnBlock>().spawnNext();
-
+				spawner.spawnNext();
 				// Disable script
 				enabled = false;
 			}

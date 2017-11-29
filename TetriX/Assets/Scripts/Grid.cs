@@ -9,6 +9,7 @@ public class Grid : MonoBehaviour {
 	private static Flash flsh;
 	private static Bubbles wtr;
 	private static GameObject go;
+	private static SpawnBlock spwn;
 	private static int[] specialblocks = new int[10];
 	private static ScoreText gameScoreDisplay;
 	public static Transform[,] grid = new Transform[w, h];
@@ -41,8 +42,12 @@ public class Grid : MonoBehaviour {
 			if (grid [x, y] != null) {
 				if (grid [x, y].gameObject.name == "blocklightning")
 					specialblocks [x] = 1;
-				else if (grid [x, y].gameObject.name == "blockaqua")
+				else if (grid [x, y].gameObject.name == "blockaquaattack")
 					specialblocks [x] = 2;
+				else if (grid [x, y].gameObject.name == "blockgravity")
+					specialblocks [x] = 3;
+				else if (grid [x, y].gameObject.name == "blockaquasupport")
+					specialblocks [x] = 4;
 				Destroy (grid [x, y].gameObject);
 				grid [x, y] = null;
 			}
@@ -58,7 +63,60 @@ public class Grid : MonoBehaviour {
 					grid [b, a] = null;
 				}
 			}
-		}
+	}
+
+	public static void WaterRage ( ) {
+		int[] validPointsX = new int[20];
+		int[] validPointsY = new int[20];
+		int validPoints = 0;
+		int maxPoints;
+		for (int a = 0; a < h/2; a++)
+			for (int b = 0; b < w; b++)
+				if ((grid[b,a] == null)&&(grid[b, a+1])&&(validPoints<20))
+				{
+					validPointsX [validPoints] = b;
+					validPointsY [validPoints] = a;
+					validPoints++;
+				}
+		if (validPoints > 6)
+			maxPoints = Random.Range (6, validPoints);
+		else
+			maxPoints = validPoints;
+		validPoints--;
+		for (int c = 0; c < maxPoints; c++)
+		{
+			int point = Random.Range (0, validPoints);
+			int posX = validPointsX [point];
+			int posY = validPointsY [point];
+			bool bottom = false;
+			while (!bottom) {
+				//	while ((grid [posX, posY] == null)&&(posY>=0)) {
+				Instantiate (Resources.Load ("Bubble"), grid [posX, posY + 1].gameObject.transform.position, Quaternion.identity);
+				grid [posX, posY + 1].position += new Vector3 (0, -1, 0);
+				grid [posX, posY] = grid [posX, posY + 1];
+				grid [posX, posY + 1] = null;
+				posY--;
+				bottom = true;
+				if (posY >= 0)
+				if (grid [posX, posY] == null)
+					bottom = false;
+				}
+				validPointsX [point] = validPointsX [validPoints];
+				validPointsY [point] = validPointsY [validPoints];
+				validPointsX [validPoints] = 0;
+				validPointsY [validPoints] = 0;
+				validPoints--;
+			}
+		wtr =  GameObject.Find ("Water").GetComponent<Bubbles> ();
+		wtr.BlueBubbles ();
+	}
+
+	public static void MagneticPressure ( ) {
+		spwn = GameObject.Find ("Spawner").GetComponent<SpawnBlock> ();
+		spwn.MagneticPressure = true;
+		spwn.magneticTime0 = Time.time;
+	}
+
 	public static void AirBubbles() {
 		int bubbles = Random.Range (1, 3);
 		int[] valid4x4 = new int[9];
@@ -144,17 +202,23 @@ public class Grid : MonoBehaviour {
 	}
 	public static void deleteFullRows() {
 		for (int y = 0; y < h; ++y) {
-			if (isRowFull(y)) {
-				deleteRow(y);
-				decreaseRowsAbove(y+1);
+			if (isRowFull (y)) {
+				deleteRow (y);
+				decreaseRowsAbove (y + 1);
 
 				for (int x = 0; x < 10; x++) {
-					
+
 					if (specialblocks [x] == 1) {
 						LightningStrike (x, y);
 						specialblocks [x] = 0;
 					} else if (specialblocks [x] == 2) {
-						AirBubbles();
+						AirBubbles ();
+						specialblocks [x] = 0;
+					} else if (specialblocks [x] == 3) {
+						MagneticPressure ();
+						specialblocks [x] = 0;
+					} else if (specialblocks [x] == 4) {
+						WaterRage ();
 						specialblocks [x] = 0;
 					}
 				}
@@ -162,5 +226,4 @@ public class Grid : MonoBehaviour {
 			}
 		}
 	}
-
 }

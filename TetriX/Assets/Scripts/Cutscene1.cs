@@ -5,13 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Cutscene1 : MonoBehaviour {
-	private SpriteRenderer Char1;
-	private SpriteRenderer Char2;
-	private SpriteRenderer Dialog1;
-	private SpriteRenderer Dialog2;
-	private SpriteRenderer Back1;
-	private SpriteRenderer Back2;
-	private SpriteRenderer FlashColor;
+	private Image Char1;
+	private Image Char2;
+	private Image Dialog1;
+	private Image Dialog2;
+	private Image Back1;
+	private Image Back2;
+	private Image FlashColor;
 	private FadeInFadeOut Background1;
 	private FadeInFadeOut Char1Fade;
 	private FadeInFadeOut Char2Fade;
@@ -57,13 +57,13 @@ public class Cutscene1 : MonoBehaviour {
 	}
 
 	void Start () {
-		Char1 =  GameObject.Find ("Char1").GetComponent<SpriteRenderer> ();
-		Char2 =  GameObject.Find ("Char2").GetComponent<SpriteRenderer> ();
-		Dialog1 =  GameObject.Find ("1NameBox").GetComponent<SpriteRenderer> ();
-		Dialog2 =  GameObject.Find ("2NameBox").GetComponent<SpriteRenderer> ();
-		Back1 =  GameObject.Find ("1NameTrans").GetComponent<SpriteRenderer> ();
-		Back2 =  GameObject.Find ("2NameTrans").GetComponent<SpriteRenderer> ();
-		FlashColor =  GameObject.Find ("Flash").GetComponent<SpriteRenderer> ();
+		Char1 =  GameObject.Find ("Char1").GetComponent<Image> ();
+		Char2 =  GameObject.Find ("Char2").GetComponent<Image> ();
+		Dialog1 =  GameObject.Find ("1NameBox").GetComponent<Image> ();
+		Dialog2 =  GameObject.Find ("2NameBox").GetComponent<Image> ();
+		Back1 =  GameObject.Find ("1NameTrans").GetComponent<Image> ();
+		Back2 =  GameObject.Find ("2NameTrans").GetComponent<Image> ();
+		FlashColor =  GameObject.Find ("Flash").GetComponent<Image> ();
 		Name1 =  GameObject.Find ("1NameText").GetComponent<Text> ();
 		Name2 =  GameObject.Find ("2NameText").GetComponent<Text> ();
 		Dialog =  GameObject.Find ("DialogText").GetComponent<Text> ();

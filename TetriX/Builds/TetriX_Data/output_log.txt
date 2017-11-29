@@ -17,14 +17,14 @@ Platform assembly: C:\Users\darkd\Documents\GitHub2\TetriX2\TetriX\Builds\TetriX
 Loading C:\Users\darkd\Documents\GitHub2\TetriX2\TetriX\Builds\TetriX_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\darkd\Documents\GitHub2\TetriX2\TetriX\Builds\TetriX_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\darkd\Documents\GitHub2\TetriX2\TetriX\Builds\TetriX_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.247 seconds
+- Completed reload, in  0.564 seconds
 Platform assembly: C:\Users\darkd\Documents\GitHub2\TetriX2\TetriX\Builds\TetriX_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\darkd\Documents\GitHub2\TetriX2\TetriX\Builds\TetriX_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 1.506991 ms
+UnloadTime: 1.911122 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: f0c -> priority: 1 
-  Thread -> id: 3034 -> priority: 1 
+  Thread -> id: 41ac -> priority: 1 
+  Thread -> id: 473c -> priority: 1 

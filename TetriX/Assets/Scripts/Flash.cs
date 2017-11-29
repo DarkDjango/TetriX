@@ -15,8 +15,7 @@ public class Flash : MonoBehaviour {
 	{
 		BeingHandled = true;
 		yield return new WaitForSeconds (0.1f);
-		if (!endStage)
-			sr.color -= new Color (0, 0, 0, 0.1f);
+		sr.color -= new Color (0, 0, 0, 0.1f);
 		BeingHandled = false;
 	}
 

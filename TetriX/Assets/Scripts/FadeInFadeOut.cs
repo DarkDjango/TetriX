@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class FadeInFadeOut : MonoBehaviour {
-	private SpriteRenderer sr;
+	private Image sr;
 	private bool BeingHandled = false;
 	public bool fadeIn;
 	public bool fadeOut;
@@ -21,7 +21,7 @@ public class FadeInFadeOut : MonoBehaviour {
 	void Start() {
 		fadeIn = false;
 		fadeOut = false;
-		sr = gameObject.GetComponent<SpriteRenderer>(); 
+		sr = gameObject.GetComponent<Image>(); 
 
 	}
 	void Update () {

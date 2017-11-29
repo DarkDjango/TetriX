@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
 	public void AdventureStart() {
-		SceneManager.LoadScene("Cutscene1");
+		SceneManager.LoadScene("CharacterSelect");
 	}
 
 	public void ClassicStart() {
