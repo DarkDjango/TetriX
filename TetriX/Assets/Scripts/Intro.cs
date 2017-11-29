@@ -32,20 +32,20 @@ public class Intro : MonoBehaviour {
 		} else if ((currentTime > time0 + 4) && (currentTime < time0 + 9)) {
 			text1.fadeIn = false;
 			text1.fadeOut = true;
-		} else if ((currentTime > time0 + 9) && (currentTime < time0 + 12)) {
+		} else if ((currentTime > time0 + 9) && (currentTime < time0 + 16)) {
 			text2.fadeIn = true;
-		} else if ((currentTime > time0 + 12) && (currentTime < time0 + 19)) {
+		} else if ((currentTime > time0 + 16) && (currentTime < time0 + 23)) {
 			text2.fadeIn = false;
 			text2.fadeOut = true;
-		} else if ((currentTime > time0 + 19) && (currentTime < time0 + 23)) {
+		} else if ((currentTime > time0 + 23) && (currentTime < time0 + 27)) {
 			text3.fadeIn = true;
-		} else if ((currentTime > time0 + 23) && (currentTime < time0 + 28)) {
+		} else if ((currentTime > time0 + 27) && (currentTime < time0 + 32)) {
 			text3.fadeIn = false;
 			text3.fadeOut = true;
-		} else if ((currentTime > time0 + 28))  {
+		} else if ((currentTime > time0 + 32))  {
 			text4.fadeIn = true;
 		} 
-		if (((currentTime >= time0 + 35) || (skipIntro))&& (goToMenu < 0))	 {
+		if (((currentTime >= time0 + 40) || (skipIntro))&& (goToMenu < 0))	 {
 			Flash.fadeIn = true;
 			goToMenu = Time.time;
 		}

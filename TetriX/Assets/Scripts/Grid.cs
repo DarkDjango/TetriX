@@ -12,6 +12,7 @@ public class Grid : MonoBehaviour {
 	private static SpawnBlock spwn;
 	private static int[] specialblocks = new int[10];
 	private static ScoreText gameScoreDisplay;
+	private static AudioSource lineSound;
 	public static Transform[,] grid = new Transform[w, h];
 	public static Vector2 roundVec2(Vector2 v) {
 		return new Vector2(Mathf.Round(v.x),
@@ -38,6 +39,10 @@ public class Grid : MonoBehaviour {
 	public static void deleteRow(int y) {
 		gameScoreDisplay = GameObject.Find ("Score").GetComponent<ScoreText> ();
 		gameScoreDisplay.score = gameScoreDisplay.score + 100;
+
+		lineSound = GameObject.Find ("Line sound").GetComponent<AudioSource> ();
+		lineSound.Play();
+
 		for (int x = 0; x < w; ++x) {
 			if (grid [x, y] != null) {
 				if (grid [x, y].gameObject.name == "blocklightning")

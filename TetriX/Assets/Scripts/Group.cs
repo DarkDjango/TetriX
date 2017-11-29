@@ -97,12 +97,13 @@ public class Group : MonoBehaviour {
 			transform.position += new Vector3 (-1, 0, 0);
 			m_Controller.Left = false;
 			// See if valid
-			if (isValidGridPos ())
+			if (isValidGridPos ()){
 				// Its valid. Update grid.
 				updateGrid ();
-			else
+			}else{
 				// Its not valid. revert.
 				transform.position += new Vector3 (1, 0, 0);
+			}
 		}
 		// Move Right
 		else if (Input.GetKeyDown (KeyCode.RightArrow) || m_Controller.Right) {
